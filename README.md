@@ -61,3 +61,6 @@ buttonBasket.onclick = () => {
 ```
 
 - реализация слайдера, возможно, с помощью сторонней библиотеки
+
+### git branches:
+![Image alt](https://sun9-53.userapi.com/impg/D-yJdFwc0a8HjJvriINcpEB785ZQtArhrcGZhw/4O6Zc4AWMAE.jpg?size=580x440&quality=95&sign=e49b09deb3913da3ba7ba2b33e77eb36&type=album)
