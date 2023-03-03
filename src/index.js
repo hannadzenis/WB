@@ -1,11 +1,11 @@
-import { createCard } from "./cards.js";
+import { cardsBlock } from "./cards.js";
 
 const rootElement = document.getElementById('root');
-rootElement.append(wrapperElement)
-
 const wrapperElement = document.getElementById('wrapper')
 
-const cardsBlock = document.getElementById('cards')
+rootElement.append(wrapperElement)
+
+
 wrapperElement.append(cardsBlock)
 
 // cardsBlock.append(createCard)

@@ -1,71 +1,39 @@
 import { createElement } from "./createElement.js"
 
+export const cardsBlock = document.getElementById('cards')
 
-
-function addText(text) {
-    return document.createTextNode(text)
-}
-
-const cards = [{
+// temp object for debug createCard function:
+const obj = {
     name: "name 1",
-    price: 89,
-    discountPrice: 92,
+    price: 28,
+    discountPrice: 60,
     image: "https://loremflickr.com/640/480/cats",
-    id: "1"
-}]
-
-
-// export const createCards = createElement('div', ['cards-item'], {})
-
-// function createCard({name, price, discountPrice, image}) {
-// export const createCard = createElement('div', ['cards-item'], {})
-
-
-
-export function createCard({name, price, discountPrice}) {
-
-    const cardItem = createElement('div', ['cards-item'], {})
-
-
-
-    // function 
-    // const cardImage = () => {
-    //     const img = new Image()
-    //     img.src = 'https://loremflickr.com/640/480/cats'
-    //     img.classList.add('item__image')
-    //     return img
-    // }
-
-    // cardItem.append(cardImage)
-
-    const disPrice = createElement('span', ['item__discountPrice'], {})
-    disPrice.append(discountPrice)
-
-    const normalPrice = createElement('span', ['item__price'], {})
-    normalPrice.append(price)
-
-    const description = createElement('span', ['item__description'], {})
-    description.append(name)
-
-    const itemInfo = createElement('div', ['cards-item-info'], {})
-    itemInfo.append(disPrice, normalPrice, description)
-
-    cardItem.append(itemInfo)
-    return cardItem
-
+    idElem: "1"
 }
-   
-// createCard(cards)
-
-// console.log(createCard(cards))
-// }
-
-// console.log(createCard())
-// createCards.append(createCard)
+// --- end temp object
 
 
 
+function createCard({name, price, discountPrice, image, idElem}) {
+    const cardItem = createElement('div', ['cards-item'], {id: idElem})
 
+    const cardImage = createElement('img', ['item__image'], {})
+    cardImage.src = image
+        
+    const cardInfo = createElement('div', ['cards-item-info'], {})
+    
+    const discPrice = createElement('span', ['item__discountPrice'], {})
+    discPrice.innerHTML = discountPrice
+    
+    const pmainPice = createElement('span', ['item__price'])
+    pmainPice.innerHTML = price
+    
+    const description = createElement('span', ['item__description'], {})
+    description.innerHTML = name
+    
+    cardInfo.append(discPrice, pmainPice, description)
+    cardItem.append(cardImage, cardInfo)
+    cardsBlock.append(cardItem)
+}
 
-
-
+createCard(obj)
