@@ -5,7 +5,4 @@ const wrapperElement = document.getElementById('wrapper')
 
 rootElement.append(wrapperElement)
 
-
 wrapperElement.append(cardsBlock)
-
-// cardsBlock.append(createCard)
