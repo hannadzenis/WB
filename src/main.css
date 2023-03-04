@@ -3,6 +3,7 @@
     max-width: 1200px;
     padding: 0 15px;
     margin: 0 auto;
+    color: #344e41;
 }
 
 .products_title {
@@ -11,7 +12,7 @@
 }
 
 .title_text {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 22px;
 }
 
@@ -25,14 +26,17 @@
 }
 
 .product-list__item__card {
-    border: 1px solid #344e41;
+    border: 1px solid #8c8c8c3d;
+    box-shadow: 0 0 5px #8c8c8c96;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
 }
+
 .card__img {
     height: 267px;
 }
+
 .card__img img {
     width: 100%;
     height: 100%;
@@ -48,9 +52,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 25px;
-    border: 1px solid #344e41;
+    border: none;
     background-color: #dad7cd;
     color: #344e41;
+}
+
+.card__view:hover {
+    background-color: #3a5a40;
+    color: #a3b18a;
+    transition: all 0.3s;
 }
 
 .card__item-sale {
@@ -63,7 +73,7 @@
 }
 
 .card__item-add {
-    border: 1px solid #344e41;
+    border: none;
     background-color: #dad7cd;
     border-radius: 25px;;
     padding: 15px;
@@ -73,10 +83,27 @@
     right: 10px;
 }
 
+.card__item-add:hover {
+    content: "";
+    transition: all 0.3s;
+    background: url(../img/cart.svg) center/cover #a3b18a;
+}
+
 .info__price {
     font-weight: 500;
     font-size: 15px;
     padding: 15px 20px;
+    position: relative;
+}
+
+.info__price::after{
+    content: "45 PLN";
+    text-decoration: line-through;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #cad2c5;
+    font-weight: 400;
 }
 
 .info__item-name {
@@ -84,4 +111,5 @@
     font-size: 15px;
     padding: 0 20px;
 }
+
 
