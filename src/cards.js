@@ -1,18 +1,24 @@
 import { createElement } from "./createElement.js"
+import { cardsURL } from "./index.js"
 
-export const cardsBlock = document.getElementById('cards')
+const searchElement = document.getElementById('search')
+const cardsBlock = document.getElementById('cards')
 
-const URL = 'https://63fb14da2027a45d8d5fb8bf.mockapi.io/cards'
-fetch(URL)
-    .then((response) => response.json())
-    .then((cardsArr) => {
-        function renderCards() {
+export async function loadCards() {
+    const response = await fetch(cardsURL)
+    const cardsArr = await response.json()
+    function renderCards() {
+        searchElement.onchange = () => {
+            const regex = new RegExp(searchElement.value) // regex = /value from input/
             for(let i = 0; i < cardsArr.length; i++) {
-                createCard(cardsArr[i])
+                if (regex.test(cardsArr[i].name.toLowerCase())) {
+                    createCard(cardsArr[i])
+                }
             }
         }
-        return renderCards()
-    })
+    }
+    return renderCards()
+}
 
 function createCard({name, price, discountPrice, image, idElem}) {
     const cardItem = createElement('div', ['cards-item'], {id: idElem})

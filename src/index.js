@@ -1,8 +1,7 @@
-import { cardsBlock } from "./cards.js";
+import { loadCards } from "./cards.js";
 
-const rootElement = document.getElementById('root');
-const wrapperElement = document.getElementById('wrapper')
+export const cardsURL = 'https://63fb14da2027a45d8d5fb8bf.mockapi.io/cards'
 
-rootElement.append(wrapperElement)
+loadCards()
 
-wrapperElement.append(cardsBlock)
+
