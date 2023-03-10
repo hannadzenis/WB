@@ -112,4 +112,123 @@
     padding: 0 20px;
 }
 
+/* POP-UP */
+
+.overlay{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.50);
+    z-index: 5;
+}
+
+.overlay_active{
+    display: block;
+}
+
+.pop-up{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.pop-up__content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    background-color:#ffff;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgb(77, 77, 77);
+    position: relative;
+}
+
+.pop-up__content__close{
+    width: 35px;
+    height: 35px;
+    border: none;
+    color: #344e41;
+    background-color: #dad7cd;
+    border-radius: 25px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.pop-up__content__close:hover{
+    background-color: #3a5a40;
+    color: #a3b18a;
+    transition: all 0.3s;
+}
+
+.pop-up__content-image {
+    max-width: 400px;
+    min-width: 200px;
+    height: 400px;
+}
+
+.pop-up__content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pop-up__content-info {
+    max-width: 400px;
+    min-height: 400px;
+    padding: 30px;
+}
+
+.pop-up__content-info__title {
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.info__price_pop-up {
+    padding: 0;
+    margin: 10px 0;
+}
+
+.info__price_pop-up::after{
+    content: "45 PLN";
+    text-decoration: line-through;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    color: #cad2c5;
+    font-weight: 400;
+}
+
+.pop-up__content-info__description {
+    font-weight: 300;
+    font-size: 12px;
+    margin: 20px 0;
+}
+
+.pop-up__content-info__addToCart {
+    min-width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    color: #344e41;
+    background-color: #dad7cd;
+    border: none;
+    border-radius: 25px;;
+    cursor: pointer;
+}
+
+.pop-up__content-info__addToCart:hover {
+    background-color: #3a5a40;
+    color: #a3b18a;
+    transition: all 0.3s;
+}
+
+
+
 
