@@ -4,6 +4,7 @@ const salesHits = [
         title: 'Foaming Showel Gel',
         descr: 'bla bla bla bla bla balbl lbafdba adfb adfb adfb adfb adfb',
         price: '38',
+        sale: '-10',
         imgSrc: '../img/1.jpg'
     },
     {
@@ -11,6 +12,7 @@ const salesHits = [
         title: 'Scrub Boom',
         descr: 'la la la la la bl afdba adfb adfb adfb adfb adfb',
         price: '15',
+        sale: '-30',
         imgSrc: 'https://basket-01.wb.ru/vol138/part13856/13856867/images/big/1.jpg'
     },
     {
@@ -18,6 +20,7 @@ const salesHits = [
         title: 'Water',
         descr: 'la la la la la bl afdba adfb adfb adfb adfb adfb',
         price: '50',
+        sale: '-50',
         imgSrc: 'https://cdn.dribbble.com/users/1038196/screenshots/14608300/plastic-water-bottle-mockup_4x.jpg'
     },
     {
@@ -25,6 +28,7 @@ const salesHits = [
         title: 'Fire',
         descr: 'la la la la la bl afdba adfb adfb adfb adfb adfb',
         price: '100',
+        sale: '-8',
         imgSrc: 'https://techrocks.ru/wp-content/uploads/2021/06/fire-1105352_1280-min.jpg'
     },
     {
@@ -32,6 +36,7 @@ const salesHits = [
         title: 'Earth',
         descr: 'la la la la la bl afdba adfb adfb adfb adfb adfb',
         price: '200',
+        sale: '-15',
         imgSrc: 'https://nypost.com/wp-content/uploads/sites/2/2021/02/quiet-earth-2.jpg?quality=75&amp;strip=all&amp;w=1024'
     },
     {
@@ -39,6 +44,7 @@ const salesHits = [
         title: 'Air',
         descr: 'la la la la la bl afdba adfb adfb adfb adfb adfb',
         price: '500',
+        sale: '-3',
         imgSrc: 'https://cdn2.static1-sima-land.com/items/4590212/0/700-nw.jpg'
     }
 ]
@@ -58,7 +64,7 @@ salesHits.forEach((object) => {
 
             <button class="card__view">Quick view</button>
 
-            <div class="card__item-sale">-10%</div>
+            <div class="card__item-sale">${object.sale}%</div>
 
             <button class="card__item-add"></button>
         </div>
