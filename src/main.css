@@ -100,19 +100,16 @@
     background: url(../img/cart.svg) center/cover #a3b18a;
 }
 
-.info__price {
+.info__price{
+    display: flex;
+    justify-content: space-between;
     font-weight: 500;
     font-size: 15px;
     padding: 15px 20px;
-    position: relative;
 }
 
-.info__price::after{
-    content: "45 PLN";
+.price_number_crossed{
     text-decoration: line-through;
-    position: absolute;
-    top: 15px;
-    right: 20px;
     color: #cad2c5;
     font-weight: 400;
 }
@@ -160,6 +157,8 @@
     position: relative;
 }
 
+
+
 .pop-up__content__close{
     width: 35px;
     height: 35px;
@@ -204,16 +203,14 @@
 }
 
 .info__price_pop-up {
+    display: flex;
+    gap: 55px;
     padding: 0;
     margin: 10px 0;
 }
 
-.info__price_pop-up::after{
-    content: "45 PLN";
+.info__price_pop-up__price_number_crossed{
     text-decoration: line-through;
-    position: absolute;
-    top: 0;
-    right: 20px;
     color: #cad2c5;
     font-weight: 400;
 }
@@ -240,7 +237,6 @@
     color: #a3b18a;
     transition: all 0.3s;
 }
-
 
 @media only screen and (max-width: 1200px) {
     .pop-up__content {
@@ -298,5 +294,6 @@
         font-size: 12px;
     }
 }
+
 
 
