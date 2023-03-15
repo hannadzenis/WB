@@ -91,7 +91,3 @@ const closePopUp = document.querySelector('.pop-up__content__close')
 closePopUp.addEventListener('click', () => {
     overlay.classList.toggle('overlay_active')
 })
-
-
-
-
