@@ -7,10 +7,38 @@
 
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./main.css">
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        
     <title>Course work FE42</title>
 </head>
 <body>
-    <script type="module" src="./index.js"></script>
+    <div id="root">
+        <div id="wrapper" class="wrapper">
+            <!-- header -->
+            <div class="header">
+                <div class="header-wrapper">
+                    <a class="header__logo" href="./">
+                        <img src="https://static.tildacdn.com/tild6431-3066-4264-b661-306535386264/logo.svg" width="300" height="40">
+                    </a>
+                    <input id="search" placeholder="search">
+                    <div class="basket-area" id="basket">
+                        <img class="basket-area__image" src="./image/header-basket.png" alt="basket" width="36px" height="36px">
+                    </div>
+                </div>
+            </div>
+            <!-- end header -->
+
+            <!-- block cards -->
+            <div id="cards" class="cards">
+                <!-- this block will be hiden and will show up for product search -->
+            </div>
+            <!-- end block cards -->
+
+        </div>
+        <script type="module" src="./index.js"></script>
+    </div>
 </body>
 </html>
