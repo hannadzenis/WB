@@ -3,7 +3,6 @@ import { renderCards } from "./search.js";
 export const cardsURL = 'https://63fb14da2027a45d8d5fb8bf.mockapi.io/cards'
 
 renderCards()
-<<<<<<< HEAD
 
 function calcPrice (noDiscount, sale) {
     let resultPrice = noDiscount - (noDiscount * (sale/100));
@@ -92,5 +91,3 @@ const closePopUp = document.querySelector('.pop-up__content__close')
 closePopUp.addEventListener('click', () => {
     overlay.classList.toggle('overlay_active')
 })
-=======
->>>>>>> 00522579ff7afb6b52653846e1a253185330651b
