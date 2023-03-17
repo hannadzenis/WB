@@ -192,12 +192,31 @@
 }
 
 .card__item-sale {
+<<<<<<< HEAD
     position: absolute;
     bottom: 20px;
     left: 20px;
     font-weight: 400;
     font-size: 13px;
     color: #03071e;
+=======
+    width: 44px;
+    height: 30px;
+    position: absolute;
+    bottom: 10px;
+    left: -10px;
+    background-color: #ad454595;
+    border-radius: 10px;
+}
+
+.card__item-sale__text{
+    position: absolute;
+    bottom: 8px;
+    left: 18px;
+    font-weight: 400;
+    font-size: 13px;
+    color: #dad7cd;
+>>>>>>> 9408b35db91ccb2d8f4e59bcfddc32f7513dcf66
 }
 
 .card__item-add {
@@ -214,7 +233,11 @@
 .card__item-add:hover {
     content: "";
     transition: all 0.3s;
+<<<<<<< HEAD
     background: url(../img/cart.svg) center/cover #a3b18a;
+=======
+    background: url(./img/cart.svg) center/cover #a3b18a;
+>>>>>>> 9408b35db91ccb2d8f4e59bcfddc32f7513dcf66
 }
 
 .info__price{
@@ -414,3 +437,7 @@
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9408b35db91ccb2d8f4e59bcfddc32f7513dcf66
