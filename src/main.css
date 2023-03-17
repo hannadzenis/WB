@@ -192,12 +192,22 @@
 }
 
 .card__item-sale {
+    width: 44px;
+    height: 30px;
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 10px;
+    left: -10px;
+    background-color: #ad454595;
+    border-radius: 10px;
+}
+
+.card__item-sale__text{
+    position: absolute;
+    bottom: 8px;
+    left: 18px;
     font-weight: 400;
     font-size: 13px;
-    color: #03071e;
+    color: #dad7cd;
 }
 
 .card__item-add {
@@ -214,7 +224,7 @@
 .card__item-add:hover {
     content: "";
     transition: all 0.3s;
-    background: url(../img/cart.svg) center/cover #a3b18a;
+    background: url(./img/cart.svg) center/cover #a3b18a;
 }
 
 .info__price{
