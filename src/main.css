@@ -1,5 +1,6 @@
 #wrapper {
-    max-width: 100%;
+    margin: 0 auto;
+    max-width: 1440px;
     /* background-color: #231942; */
     /* background-color: #CAD2C5; */
     /* background-color: #DAD7CD; */
@@ -8,6 +9,8 @@
 
 /* Yurys part */
 .header {
+    margin: 0 auto;
+    max-width: 100%;
     background-color: #231942;
     box-shadow: 0px 5px 20px 2px #00000073;
 }
@@ -102,6 +105,12 @@
     border-radius: 20px;
     color: #344e41;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.item-footer:hover {
+    background-color: #dad7cd69;
+    transition: 0.2s;
 }
 
 .item-price {
