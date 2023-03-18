@@ -59,6 +59,11 @@
     transition: 0.2s;
 }
 
+.swiper {
+    width: 100%;
+    height: 400px;
+}
+
 .cards {
     margin: 0 auto;
     max-width: 1440px;
