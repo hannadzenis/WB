@@ -1,25 +1,36 @@
 import { createElement } from "./createElement.js"
+import { calcPrice } from "./index.js"
 
 const cardsBlock = document.getElementById('cards')
 
-export function createCard({name, price, discountPrice, image, idElem}) {
-    const cardItem = createElement('div', ['cards-item'], {id: idElem})
+export function createCard({name, price, image, sale, idElem, description}) {
 
-    const cardImage = createElement('img', ['item__image'], {})
-    cardImage.src = image
+    const cardItem = createElement('div', ['cards-item'], {id: idElem})
+        const itemContent = createElement('div', ['item-content'], {})
+            const cardImage = createElement('img', ['item__image'], {})
+            cardImage.src = image
+            const itemInfo = createElement('div', ['item-info'], {})
+                const itemName = createElement('div', ['item__name'], {})
+                itemName.innerHTML = name
+                const itemDescription = createElement('div', ['item__descriptions'], {})
+                itemDescription.innerHTML = description
+            itemInfo.append(itemName, itemDescription)
+        itemContent.append(cardImage, itemInfo)
         
-    const cardInfo = createElement('div', ['cards-item-info'], {})
+        const itemFooter = createElement('div', ['item-footer'], {})
+            const itemAddInBasket = createElement('span', ['item__byu'], {})
+            itemAddInBasket.innerHTML = 'Add to basket'
+
+            const itemPrices = createElement('div', ['item-price'], {})
+                const discountPrice = createElement('span', ['item__discountPrice'], {})
+                discountPrice.innerHTML = calcPrice(price, sale) + ' PLN'
+
+            const itemNormalPrice = createElement('span', ['item__normalPrice'], {})
+            itemNormalPrice.innerHTML = price +' PLN'
+            itemPrices.append(discountPrice, itemNormalPrice)
+
+        itemFooter.append(itemAddInBasket, itemPrices)
     
-    const discPrice = createElement('span', ['item__discountPrice'], {})
-    discPrice.innerHTML = discountPrice + ' $'
-    
-    const pmainPice = createElement('span', ['item__price'])
-    pmainPice.innerHTML = price + ' $'
-    
-    const description = createElement('span', ['item__description'], {})
-    description.innerHTML = name
-    
-    cardInfo.append(discPrice, pmainPice, description)
-    cardItem.append(cardImage, cardInfo)
+    cardItem.append(itemContent, itemFooter)
     cardsBlock.append(cardItem)
 }

@@ -1,12 +1,16 @@
 #wrapper {
-    max-width: 100%;
+    margin: 0 auto;
+    max-width: 1440px;
     /* background-color: #231942; */
     /* background-color: #CAD2C5; */
     /* background-color: #DAD7CD; */
     /* background-color: #0D1B2A; */
 }
 
+/* Yurys part */
 .header {
+    margin: 0 auto;
+    max-width: 100%;
     background-color: #231942;
     box-shadow: 0px 5px 20px 2px #00000073;
 }
@@ -56,64 +60,94 @@
 }
 
 .cards {
-    display: flex;
     margin: 0 auto;
     max-width: 1440px;
-    flex-wrap: wrap;
-    justify-content: space-around;
 }
 
 .cards-item {
     margin: 20px;
     padding: 10px;
-    max-width: 220px;
     border-radius: 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    transition: 0.2s;
-    cursor: pointer;
 }
 
-.cards-item:hover {
-    scale: 1.01;
-    transition: 0.2s;
+.item-content {
+    display: flex;
+    padding: 10px 0;
 }
 
 .item__image {
-    width: 200px;
-    height: 300px;
+    max-height: 250px;
+    /* max-width: 300px; */
     border-radius: 20px;
 }
 
-.cards-item-info {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px 0;
-    padding: 0 10px;
+.item-info {
+    padding: 20px 40px;
 }
 
-.item__discountPrice,
-.item__price {
-    width: 60px;
-    text-align: center;
-    min-width: 50px;
-}
-
-.item__discountPrice {
-    font-size: 2rem;
+.item__name {
+    font-size: 3rem;
     font-weight: 700;
 }
 
-.item__price {
-    font-size: 1.7rem;
-    text-decoration: line-through;
+.item__descriptions {
+    padding: 20px 0;
+    text-indent: 40px;
+    text-align: justify;
+    font-size: 1.5rem;
 }
 
-.item__description {
-    padding-top: 10px;
-    font-size: 2rem;
+.item-footer {
+    position: relative;
+    height: 60px;
+    background-color: #dad7cd48;
+    border-radius: 20px;
+    color: #344e41;
+    cursor: pointer;
+    transition: 0.2s;
 }
+
+.item-footer:hover {
+    background-color: #dad7cd69;
+    transition: 0.2s;
+}
+
+.item-price {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+}
+.item__byu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    transition: 0.3s;
+}
+
+.item__discountPrice {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.item__normalPrice {
+    padding-left: 20px;
+    font-size: 2rem;
+    text-decoration: line-through;
+    color: #5757573a;
+}
+
+.item-footer:hover > .item__byu {
+    text-shadow: 1px 1px 2px #00000060;
+    transition: 0.15s;
+}
+/* --- end Yurys part */
+
+
 
 /* Хиты продаж - Аня */
 .container {
@@ -421,7 +455,6 @@
         font-size: 12px;
     }
 }
-
 
 
 
