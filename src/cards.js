@@ -3,6 +3,8 @@ import { calcPrice } from "./index.js"
 
 const cardsBlock = document.getElementById('cards')
 
+const goodsLocalStorage = []
+
 export function createCard({name, price, image, sale, idElem, description}) {
 
     const cardItem = createElement('div', ['cards-item'], {id: idElem})
@@ -29,8 +31,18 @@ export function createCard({name, price, image, sale, idElem, description}) {
             itemNormalPrice.innerHTML = price +' PLN'
             itemPrices.append(discountPrice, itemNormalPrice)
 
+        itemFooter.addEventListener('click', () => {
+            setLocalStorage(name. price, idElem)
+        })
+
         itemFooter.append(itemAddInBasket, itemPrices)
     
     cardItem.append(itemContent, itemFooter)
     cardsBlock.append(cardItem)
+
+    function setLocalStorage() {
+        goodsLocalStorage.push({name, price, idElem})
+        const set = localStorage.setItem('goods', JSON.stringify(goodsLocalStorage))
+        return set
+    }
 }
