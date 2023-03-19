@@ -261,12 +261,12 @@
     right: 10px;
 }
 
-.card__item-add--click{
-    background-color: red;
+.card__item-add--click {
+    transition: all 0.3s;
+    background: url(./img/done.svg) center/cover #dad7cd;
 }
 
-.card__item-add:hover {
-    content: "";
+.card__item-add:not(.card__item-add--click):hover {
     transition: all 0.3s;
     background: url(./img/cart.svg) center/cover #a3b18a;
 }
@@ -403,7 +403,13 @@
     cursor: pointer;
 }
 
-.pop-up__content-info__addToCart:hover {
+.pop-up__content-info__addToCart--click {
+    color: transparent;
+    transition: all 0.5s;
+    background: url(./img/done.svg) center/contain no-repeat #dad7cd;
+}
+
+.pop-up__content-info__addToCart:not(.pop-up__content-info__addToCart--click):hover {
     background-color: #3a5a40;
     color: #a3b18a;
     transition: all 0.3s;
