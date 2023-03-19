@@ -3,8 +3,6 @@ import { calcPrice, cardsURL } from "./index.js"
 
 const cardsBlock = document.getElementById('cards')
 
-const goodsLocalStorage = []
-
 export function createCard({name, price, image, sale, idElem, description}) {
 
     const cardItem = createElement('div', ['cards-item'], {id: idElem})
