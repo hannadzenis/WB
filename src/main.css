@@ -261,6 +261,10 @@
     right: 10px;
 }
 
+.card__item-add--click{
+    background-color: red;
+}
+
 .card__item-add:hover {
     content: "";
     transition: all 0.3s;
