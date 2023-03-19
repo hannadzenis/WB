@@ -21,19 +21,18 @@ export function createCard({name, price, image, sale, idElem, description}) {
             const itemAddInBasket = createElement('span', ['item__byu'], {})
             itemAddInBasket.innerHTML = 'Add to basket'
 
-            const itemPrices = createElement('div', ['item-price'], {})
-                const discountPrice = createElement('span', ['item__discountPrice'], {})
-                discountPrice.innerHTML = calcPrice(price, sale) + ' PLN'
+            
+            const discountPrice = createElement('span', ['item__discountPrice'], {})
+            discountPrice.innerHTML = calcPrice(price, sale) + ' PLN'
 
             const itemNormalPrice = createElement('span', ['item__normalPrice'], {})
             itemNormalPrice.innerHTML = price +' PLN'
-            itemPrices.append(discountPrice, itemNormalPrice)
 
         itemFooter.addEventListener('click', () => {
             setLocalStorage(idElem)
         })
 
-        itemFooter.append(itemAddInBasket, itemPrices)
+        itemFooter.append(itemAddInBasket, discountPrice, itemNormalPrice)
     
     cardItem.append(itemContent, itemFooter)
     cardsBlock.append(cardItem)
