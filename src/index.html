@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./reset.css">
+
+    <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
     <link rel="stylesheet" href="./main.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,6 +34,21 @@
     </div>
     <!-- end header -->
         <div id="wrapper" class="wrapper">
+
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/slide1.webp" alt="slide1"></div>
+                    <div class="swiper-slide"><img src="img/slide2.webp" alt="slide2"></div>
+                    <div class="swiper-slide"><img src="img/slide3.jpg" alt="slide3"></div>
+                    <div class="swiper-slide"><img src="img/slide4.jpg" alt="slide4"></div>
+                    <div class="swiper-slide"><img src="img/slide5.jpg" alt="slide5"></div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+        
+                <div class="swiper-pagination"></div>
+            </div>
+
             <!-- block cards -->
             <div id="cards" class="cards">
                 <span id="cards__noResult">oops... No result for you request</span>
@@ -72,7 +90,22 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Модальное окно корзины -->
+            <div class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Корзина</h2>
+                        <button class="clear-btn">Очистить корзину</button>
+                    </div>
+                <ul class="cart-items"></ul>
+                <div class="cart-total"></div>
+                </div>
+            </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <script src="slider.js"></script>
+        <script src="basket.js"></script>
         <script type="module" src="./index.js"></script>
     <!-- </div> -->
 </body>
