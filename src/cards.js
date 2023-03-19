@@ -42,6 +42,7 @@ export function createCard({name, price, image, sale, idElem, description}) {
 }
 
 const basketElement = []
+let fullPrice = 0
 
 async function setLocalStorage(idCards) {
     const response = await fetch(cardsURL)
@@ -49,7 +50,10 @@ async function setLocalStorage(idCards) {
     for(let i = 0; i < cardsArr.length; i++ ) {
         if(cardsArr[i].idElem === idCards) {
             basketElement.push(cardsArr[i])
-            return localStorage.setItem('goods', JSON.stringify(basketElement))
+            fullPrice += calcPrice(cardsArr[i].price, cardsArr[i].sale)
+            const goods = localStorage.setItem('goods', JSON.stringify(basketElement))
+            const price = localStorage.setItem('price', JSON.stringify(fullPrice))
+            return goods, price
         }
     }
 }
