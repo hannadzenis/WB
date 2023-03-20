@@ -5,7 +5,7 @@ const cartItems = document.querySelector('.cart-items');
 const totalAmount = document.querySelector('.cart-total');
 
 // Переменная для хранения товаров в корзине
-let cart = [];
+let basketArr = [];
 
 // Функция для показа корзины
 function showCart() {
@@ -41,7 +41,8 @@ cartBtn.addEventListener('click', function() {
 
 // Очищаем корзину при нажатии на кнопку Очистить корзину
 clearBtn.addEventListener('click', function() {
-  cart = [];
+  basketArr = [];
+  clearLocalStorage();
   showCart();
 });
 
@@ -54,55 +55,22 @@ document.addEventListener('click', function(event) {
 
 
 function getLocalStorage() {
-	return JSON.parse(localStorage.getItem('testArr'))
-
-  // basket
+	return JSON.parse(localStorage.getItem('basket'))
 }
 
 // функция загрузки из localStorage
 function getName() {
-	if (localStorage.hasOwnProperty('testArr')) {
+	if (localStorage.hasOwnProperty('basket')) {
 		const arr = getLocalStorage()
         for(const item of arr){
-            cart.push(item)
+          basketArr.push(item)
 			showCart()
         }
 	}
 }
 getName()
 
-const testArr = [{
-    id: 1,
-    name: "Штаны",
-    price: 500,
-    discountPrice: 400,
-    description: "lorem.text"
-},{
-    id: 2,
-    name: "Майка",
-    price: 400,
-    discountPrice: 300,
-    description: "lorem.text"
-},{
-    id: 3,
-    name: "Куртка",
-    price: 1000,
-    discountPrice: 900,
-    description: "lorem.text"
-},{
-    id: 4,
-    name: "Туфли",
-    price: 700,
-    discountPrice: 600,
-    description: "lorem.text"
-},{
-    id: 5,
-    name: "Носки",
-    price: 100,
-    discountPrice: 90,
-    description: "lorem.text"
-}]
-function setLocalStor (testArr) {
-    localStorage.setItem("testArr", JSON.stringify(testArr))
+// Функция удаления ключа из localStorage
+function clearLocalStorage(){
+  localStorage.removeItem('basket')
 }
-setLocalStor(testArr)
