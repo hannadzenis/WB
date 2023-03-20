@@ -21,7 +21,6 @@ export function createCard({name, price, image, sale, idElem, description}) {
             const itemAddInBasket = createElement('span', ['item__byu'], {})
             itemAddInBasket.innerHTML = 'Add to basket'
 
-            
             const discountPrice = createElement('span', ['item__discountPrice'], {})
             discountPrice.innerHTML = calcPrice(price, sale) + ' PLN'
 
