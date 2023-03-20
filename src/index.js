@@ -83,9 +83,32 @@ async function salesHits() {
     closePopUp.addEventListener('click', () => {
         overlay.classList.toggle('overlay_active')
     })
+
+    /* Animation for button after adding a product */
+
+    const buttonsAdd = document.querySelectorAll(".card__item-add");
+    const popupAdd =  document.querySelectorAll(".pop-up__content-info__addToCart");
+    buttonsAdd.forEach( (button) => {
+        button.addEventListener('click', () => {
+            button.classList.toggle('card__item-add--click')
+        })
+    })
+    popupAdd.forEach( (button) => {
+        button.addEventListener('click', () => {
+            button.classList.toggle('pop-up__content-info__addToCart--click')
+        })
+    })
+
 }
 
 salesHits()
+
+
+
+
+
+
+
 
 
 
