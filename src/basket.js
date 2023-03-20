@@ -30,6 +30,7 @@ function showCart() {
   }
   if(getLocalStorage('price') !== null){
     totalAmount.innerHTML = `Total: ${getPrice()} PLN`;
+  } 
 }
 
 // Показываем модальное окно при нажатии на кнопку Корзина
