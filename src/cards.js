@@ -38,9 +38,8 @@ export function createCard({name, price, image, sale, idElem, description}) {
     cardsBlock.append(cardItem)
 }
 
-const basketElement = []
-let fullPrice = 0
-
+const basketElement = JSON.parse(localStorage.getItem('basket')) || []
+let fullPrice = JSON.parse(localStorage.getItem('price'))*1 || 0
 async function setLocalStorage(idCards) {
     const response = await fetch(cardsURL)
     const cardsArr = await response.json()
