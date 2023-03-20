@@ -50,6 +50,7 @@ async function salesHits() {
                 `
                 productGrid.innerHTML += itemHTML;
             }
+
     /* POP-UP */
     const buttons = document.querySelectorAll('.card__view');
     const overlay = document.querySelector('.overlay');
@@ -79,6 +80,7 @@ async function salesHits() {
         })
     })
     
+    /* Closing Pop-Up */
     const closePopUp = document.querySelector('.pop-up__content__close')
     closePopUp.addEventListener('click', () => {
         overlay.classList.toggle('overlay_active')
@@ -106,6 +108,10 @@ async function salesHits() {
 }
 
 salesHits()
+
+setLocalStorage()
+
+
 
 
 
