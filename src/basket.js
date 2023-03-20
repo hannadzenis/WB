@@ -13,8 +13,8 @@ function showCart() {
   cartItems.innerHTML = '';
   
   // Добавляем каждый товар в список
-  for (let i = 0; i < cart.length; i++) {
-    const item = cart[i];
+  for (let i = 0; i < basketArr.length; i++) {
+    const item = basketArr[i];
     const li = document.createElement('li');
     const spanItemName = document.createElement('span')
     spanItemName.innerHTML = `${item.name}`
@@ -27,8 +27,8 @@ function showCart() {
   
   // Показываем общую сумму стоимости товаров
   let total = 0;
-  for (let i = 0; i < cart.length; i++) {
-    const item = cart[i];
+  for (let i = 0; i < basketArr.length; i++) {
+    const item = basketArr[i];
     total += item.discountPrice;
   }
   totalAmount.innerHTML = `Итого: ${total}$`;
