@@ -305,7 +305,7 @@
 /* Хиты продаж - Аня */
 .container {
     max-width: 1200px;
-    padding: 0 15px;
+    padding: 0 15px 40px;
     margin: 0 auto;
     color: #344e41;
 }
@@ -716,3 +716,16 @@
   cursor: pointer;
 }
 
+.footer {
+    display: flex;  
+    width: 100%;
+    height: 60px;
+    background-color: #e4e4e45e;
+}
+
+.footer-container {
+    margin: auto;
+    max-width: 1440px;
+    font-size: 1.7rem;
+    font-weight: 100;
+}
