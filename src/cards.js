@@ -47,7 +47,7 @@ async function setLocalStorage(idCards) {
             basketElement.push(cardsArr[i])
             fullPrice += calcPrice(cardsArr[i].price, cardsArr[i].sale)
             const goods = localStorage.setItem('basket', JSON.stringify(basketElement))
-            const price = localStorage.setItem('price', JSON.stringify(fullPrice.toFixed(2)))
+            const price = localStorage.setItem('price', JSON.stringify(fullPrice))
             return goods, price
         }
     }
