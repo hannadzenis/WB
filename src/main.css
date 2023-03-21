@@ -438,6 +438,10 @@
     padding: 0 20px;
 }
 
+.info__description {
+    display: none;
+}
+
 /* POP-UP */
 
 .overlay{
@@ -510,6 +514,7 @@
 
 .pop-up__content-info {
     max-width: 400px;
+    min-width: 260px;
     min-height: 400px;
     padding: 30px;
 }
@@ -605,6 +610,9 @@
         width: 200px;
         text-align: center;
     }
+    .pop-up__content .pop-up__content-info{
+        min-width: 50px;
+    }
     .pop-up__content-info .pop-up__content-info__title{
         font-size: 14px;
     }
@@ -616,6 +624,9 @@
     .pop-up__content-info .pop-up__content-info__addToCart {
         padding: 5px;
         font-size: 12px;
+    }
+    .info__price_pop-up{
+        font-size: 10px;
     }
 }
 
