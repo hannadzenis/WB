@@ -29,7 +29,7 @@ function showCart() {
     cartItems.appendChild(li);
   }
   if(getLocalStorage('price') !== null){
-    totalAmount.innerHTML = `Total: ${getPrice()} PLN`;
+    totalAmount.innerHTML = `Total: ${getPrice().toFixed(2)} PLN`;
   } 
 }
 

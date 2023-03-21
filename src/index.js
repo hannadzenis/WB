@@ -1,15 +1,18 @@
-import { renderCards } from "./search.js";
+import { renderSearchCards } from "./search.js";
 
 export const cardsURL = 'https://63fb14da2027a45d8d5fb8bf.mockapi.io/cards'
 
-renderCards() // search cards
+renderSearchCards() // search cards
 
 export function calcPrice (noDiscount, sale) {
-    let resultPrice = noDiscount - (noDiscount * (sale/100));
-    return resultPrice.toFixed(2);
+    let resultPrice = (noDiscount - (noDiscount * (sale/100))).toFixed(2);
+    return Number (resultPrice);
 }
 
 const productGrid = document.querySelector('.products-list')
+
+export const basketArray = JSON.parse(localStorage.getItem('basket')) || []
+export let fullPrice = JSON.parse(localStorage.getItem('price'))*1 || 0
 
 async function salesHits() {
 
@@ -86,8 +89,6 @@ async function salesHits() {
             popUpDescription.innerText = cardDescription;
 
             listItemID = event.target.closest('.product-list__item').id
-            console.log(listItemID)
-    
         })
     })
     
@@ -97,13 +98,8 @@ async function salesHits() {
         overlay.classList.toggle('overlay_active')
     })
 
-    // const itemCards = document.querySelectorAll(".product-list__item")
     const buttonsAdd = document.querySelectorAll(".card__item-add");
     const popupAdd =  document.querySelectorAll(".pop-up__content-info__addToCart");
-    console.log(buttonsAdd)
-
-    const basketArray = JSON.parse(localStorage.getItem('basket')) || []
-    let fullPrice = JSON.parse(localStorage.getItem('price'))*1 || 0
 
     buttonsAdd.forEach( (button, i) => {
         button.addEventListener('click', () => {
@@ -122,7 +118,6 @@ async function salesHits() {
         })
     })
 
-
     popupAdd.forEach( (button, i) => {
         button.addEventListener('click', () => {
 
@@ -140,5 +135,19 @@ async function salesHits() {
     })
 }
 
-salesHits()
+// function for add cards in localStorage from search
+export async function setLocalStorage(idCards) {
+    const response = await fetch(cardsURL)
+    const cardsArr = await response.json()
+    for(let i = 0; i < cardsArr.length; i++ ) {
+        if(cardsArr[i].idElem === idCards) {
+            basketArray.push(cardsArr[i])
+            fullPrice += calcPrice(cardsArr[i].price, cardsArr[i].sale)
+            const goods = localStorage.setItem('basket', JSON.stringify(basketArray))
+            const price = localStorage.setItem('price', JSON.stringify(fullPrice))
+            return goods, Number (price)
+        }
+    }
+}
 
+salesHits()
