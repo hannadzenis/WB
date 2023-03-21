@@ -170,12 +170,14 @@
 }
 
 .item__name {
+    color: #344e41;
     font-size: 3rem;
     font-weight: 700;
 }
 
 .item__descriptions {
     padding: 20px 0;
+    color: #344e41;
     text-indent: 40px;
     text-align: justify;
     font-size: 1.5rem;
