@@ -6,7 +6,7 @@ renderCards() // search cards
 
 export function calcPrice (noDiscount, sale) {
     let resultPrice = noDiscount - (noDiscount * (sale/100));
-    return resultPrice;
+    return resultPrice.toFixed(2);
 }
 
 const productGrid = document.querySelector('.products-list')
@@ -112,7 +112,7 @@ async function salesHits() {
 
             fullPrice += calcPrice(cardsArr[i].price, cardsArr[i].sale)
 
-            localStorage.setItem('price', JSON.stringify(fullPrice.toFixed(2)))
+            localStorage.setItem('price', JSON.stringify(fullPrice))
             localStorage.setItem('basket', JSON.stringify(basketArray))
 
             /* Animation for button after adding a product */
@@ -130,7 +130,7 @@ async function salesHits() {
 
             fullPrice += calcPrice(cardsArr[listItemID-1].price, cardsArr[listItemID-1].sale)
 
-            localStorage.setItem('price', JSON.stringify(fullPrice.toFixed(2)))
+            localStorage.setItem('price', JSON.stringify(fullPrice))
             localStorage.setItem('basket', JSON.stringify(basketArray))
 
             button.classList.toggle('pop-up__content-info__addToCart--click'), setTimeout(function () {
