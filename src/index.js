@@ -91,28 +91,40 @@ async function salesHits() {
         overlay.classList.toggle('overlay_active')
     })
 
-    /* Animation for button after adding a product */
-
-    const itemCards = document.querySelectorAll(".product-list__item")
+    // const itemCards = document.querySelectorAll(".product-list__item")
     const buttonsAdd = document.querySelectorAll(".card__item-add");
     const popupAdd =  document.querySelectorAll(".pop-up__content-info__addToCart");
     console.log(buttonsAdd)
 
-    const basketArray = []
+    const basketArray = JSON.parse(localStorage.getItem('basket')) || []
+    let fullPrice = JSON.parse(localStorage.getItem('price'))*1 || 0
+
     buttonsAdd.forEach( (button, i) => {
         button.addEventListener('click', () => {
+
             basketArray.push(cardsArr[i]);
+
+            fullPrice += calcPrice(cardsArr[i].price, cardsArr[i].sale)
+
+            localStorage.setItem('price', JSON.stringify(fullPrice.toFixed(2)))
             localStorage.setItem('basket', JSON.stringify(basketArray))
 
+            /* Animation for button after adding a product */
             button.classList.toggle('card__item-add--click'), setTimeout(function () {
                 button.classList.remove("card__item-add--click");
             }, 800);
         })
     })
-    popupAdd.forEach( (button) => {
+
+
+    popupAdd.forEach( (button, i) => {
         button.addEventListener('click', () => {
 
             basketArray.push(cardsArr[listItemID-1])
+
+            fullPrice += calcPrice(cardsArr[listItemID-1].price, cardsArr[listItemID-1].sale)
+
+            localStorage.setItem('price', JSON.stringify(fullPrice.toFixed(2)))
             localStorage.setItem('basket', JSON.stringify(basketArray))
 
             button.classList.toggle('pop-up__content-info__addToCart--click'), setTimeout(function () {
