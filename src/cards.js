@@ -1,5 +1,5 @@
 import { createElement } from "./createElement.js"
-import { calcPrice, cardsURL } from "./index.js"
+import { calcPrice, setLocalStorage } from "./index.js"
 
 const cardsBlock = document.getElementById('cards')
 
@@ -35,20 +35,4 @@ export function createCard({name, price, image, sale, idElem, description}) {
     
     cardItem.append(itemContent, itemFooter)
     cardsBlock.append(cardItem)
-}
-
-const basketElement = JSON.parse(localStorage.getItem('basket')) || []
-let fullPrice = JSON.parse(localStorage.getItem('price'))*1 || 0
-async function setLocalStorage(idCards) {
-    const response = await fetch(cardsURL)
-    const cardsArr = await response.json()
-    for(let i = 0; i < cardsArr.length; i++ ) {
-        if(cardsArr[i].idElem === idCards) {
-            basketElement.push(cardsArr[i])
-            fullPrice += calcPrice(cardsArr[i].price, cardsArr[i].sale)
-            const goods = localStorage.setItem('basket', JSON.stringify(basketElement))
-            const price = localStorage.setItem('price', JSON.stringify(fullPrice))
-            return goods, price
-        }
-    }
 }

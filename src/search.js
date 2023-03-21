@@ -3,7 +3,7 @@ import { createCard } from "./cards.js"
 
 const searchElement = document.getElementById('search')
 
-export async function renderCards() {
+export async function renderSearchCards() {
     const response = await fetch(cardsURL)
     const cardsArr = await response.json()
     searchElement.oninput = () => {
