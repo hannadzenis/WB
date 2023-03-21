@@ -12,12 +12,13 @@ export function calcPrice (noDiscount, sale) {
 const productGrid = document.querySelector('.products-list')
 
 async function salesHits() {
+
     const response = await fetch(cardsURL)
     const cardsArr = await response.json()
 
     for (let i = 0; i < 10; i++) {
         let itemHTML = `
-        <div class="product-list__item">
+        <div id = "${cardsArr[i].idElem}" class="product-list__item">
     
             <div class="product-list__item__card">
     
@@ -31,7 +32,7 @@ async function salesHits() {
                     <p class="card__item-sale__text">-${cardsArr[i].sale}%</p>
                 </div>
     
-                <button class="card__item-add"></button>
+                <button data-cart class="card__item-add"></button>
             </div>
     
             <div class="product-list__item__info">
@@ -55,7 +56,8 @@ async function salesHits() {
     const buttons = document.querySelectorAll('.card__view');
     const overlay = document.querySelector('.overlay');
     const popUpWindow = document.querySelector('.pop-up__content')
-    
+    let listItemID = 0;
+
     buttons.forEach( (button) => {
         button.addEventListener('click', (event) => {
             overlay.classList.toggle('overlay_active')
@@ -76,6 +78,9 @@ async function salesHits() {
             popUpPrice.innerText = cardPrice;
             popUpPriceCrossed.innerText = cardPriceCrossed;
             popUpImg.src = cardImgSrc;
+
+            listItemID = event.target.closest('.product-list__item').id
+            console.log(listItemID)
     
         })
     })
@@ -88,39 +93,34 @@ async function salesHits() {
 
     /* Animation for button after adding a product */
 
+    const itemCards = document.querySelectorAll(".product-list__item")
     const buttonsAdd = document.querySelectorAll(".card__item-add");
     const popupAdd =  document.querySelectorAll(".pop-up__content-info__addToCart");
-    buttonsAdd.forEach( (button) => {
+    console.log(buttonsAdd)
+
+    const basketArray = []
+    buttonsAdd.forEach( (button, i) => {
         button.addEventListener('click', () => {
+            basketArray.push(cardsArr[i]);
+            localStorage.setItem('basket', JSON.stringify(basketArray))
+
             button.classList.toggle('card__item-add--click'), setTimeout(function () {
-                                button.classList.remove("card__item-add--click");
-                            }, 800);
+                button.classList.remove("card__item-add--click");
+            }, 800);
         })
     })
     popupAdd.forEach( (button) => {
         button.addEventListener('click', () => {
+
+            basketArray.push(cardsArr[listItemID-1])
+            localStorage.setItem('basket', JSON.stringify(basketArray))
+
             button.classList.toggle('pop-up__content-info__addToCart--click'), setTimeout(function () {
                 button.classList.remove("pop-up__content-info__addToCart--click");
             }, 800);
         })
     })
-
 }
 
 salesHits()
-
-setLocalStorage()
-
-
-
-
-
-
-
-
-
-
-
-
-
 
