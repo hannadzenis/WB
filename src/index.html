@@ -22,8 +22,9 @@
     <!-- header -->
     <div class="header">
         <div class="header-wrapper">
-            <a class="header__logo" href="./">
-                <img src="https://static.tildacdn.com/tild6431-3066-4264-b661-306535386264/logo.svg" width="300" height="40">
+            <a href="./">
+                <img class="header__logo" src="https://static.tildacdn.com/tild6431-3066-4264-b661-306535386264/logo.svg" width="300" height="40">
+                <img class="header__smalLogo" src="https://static.tildacdn.com/tild3633-3763-4336-b136-613235613262/Asset_1.svg" width="40" height="40">
             </a>
             <input id="search" placeholder="search">
             <div class="basket-area" id="basket">
@@ -33,6 +34,12 @@
     </div>
     <!-- end header -->
         <div id="wrapper" class="wrapper">
+
+            <!-- block cards -->
+            <div id="cards" class="cards">
+                <!-- this block will be hiden and will show up for product search -->
+            </div>
+            <!-- end block cards -->
 
             <div class="swiper">
                 <div class="swiper-wrapper">
@@ -47,12 +54,6 @@
         
                 <div class="swiper-pagination"></div>
             </div>
-
-            <!-- block cards -->
-            <div id="cards" class="cards">
-                <!-- this block will be hiden and will show up for product search -->
-            </div>
-            <!-- end block cards -->
 
             <!-- Хиты продаж -->
             <section class="SalesHits">
@@ -101,6 +102,16 @@
                 </div>
             </div>
         </div>
+    <div class="footer">
+
+        <div class="footer-container">
+            <span>FE-42 course work: Aleksandr, Hanna, Yury</span>
+        </div>
+
+
+
+
+    </div>
         <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
         <script src="slider.js"></script>
         <script type="module" src="./basket.js"></script>
