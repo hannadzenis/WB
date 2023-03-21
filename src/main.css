@@ -1,10 +1,6 @@
 #wrapper {
     margin: 0 auto;
     max-width: 1440px;
-    /* background-color: #231942; */
-    /* background-color: #CAD2C5; */
-    /* background-color: #DAD7CD; */
-    /* background-color: #0D1B2A; */
 }
 
 /* Yurys part */
@@ -428,7 +424,8 @@
 
 .price_number_crossed{
     text-decoration: line-through;
-    color: #cad2c5;
+    /* color: #cad2c5; */
+    color: #a9b1a4;
     font-weight: 400;
 }
 
