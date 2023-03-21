@@ -5,6 +5,7 @@ const modal = document.querySelector('.modal');
 const clearBtn = document.querySelector('.clear-btn');
 const cartItems = document.querySelector('.cart-items');
 const totalAmount = document.querySelector('.cart-total');
+const closeBtn = document.querySelector('.close-basket')
 
 // Переменная для хранения товаров в корзине
 let basketArr = []
@@ -48,10 +49,14 @@ clearBtn.addEventListener('click', function() {
 
 // Закрытие модального окна при клике вне блока корзины
 document.addEventListener('click', function(event) {
-    if (event.target.closest('.modal-content') === null && event.target.closest('.basket-area') === null) {
+    if (event.target.closest('.modal-content') === null && event.target.closest('.basket-area') === null || closeBtn.onclick == true) {
         modal.style.display = 'none';
     }
 });
+
+// Закрытие модального окна при клике На крестик
+closeBtn.addEventListener('click', () => modal.style.display = 'none')
+
 
 function getLocalStorage(nameKey) {
 	return JSON.parse(localStorage.getItem(nameKey))
