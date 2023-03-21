@@ -45,6 +45,8 @@ async function salesHits() {
                 <div class="info__item-name">
                     <p class="name_text">${cardsArr[i].name}</p>
                 </div>
+
+                <div class="info__description">${cardsArr[i].description}</div>
     
                 </div>
                 </div>
@@ -55,7 +57,8 @@ async function salesHits() {
     /* POP-UP */
     const buttons = document.querySelectorAll('.card__view');
     const overlay = document.querySelector('.overlay');
-    const popUpWindow = document.querySelector('.pop-up__content')
+    const popUpWindow = document.querySelector('.pop-up__content');
+    // const descriptions = document.querySelectorAll('.info__description');
     let listItemID = 0;
 
     buttons.forEach( (button) => {
@@ -66,6 +69,7 @@ async function salesHits() {
             let cardPrice = cardInfo.querySelector('.price_number').innerText
             let cardPriceCrossed = cardInfo.querySelector('.price_number_crossed').innerText
             let cardTitle = cardInfo.querySelector('.info__item-name').innerText
+            let cardDescription = cardInfo.querySelector('.info__description').innerText
             
             let cardImgSrc = event.target.closest('.product-list__item').querySelector('.card__img img').src
     
@@ -73,11 +77,13 @@ async function salesHits() {
             let popUpPrice = popUpWindow.querySelector('.info__price_pop-up__price_number')
             let popUpPriceCrossed = popUpWindow.querySelector('.info__price_pop-up__price_number_crossed')
             let popUpImg = popUpWindow.querySelector('.pop-up__content-image img')
+            let popUpDescription = popUpWindow.querySelector('.pop-up__content-info__description')
 
             popUpTitle.innerText = cardTitle;
             popUpPrice.innerText = cardPrice;
             popUpPriceCrossed.innerText = cardPriceCrossed;
             popUpImg.src = cardImgSrc;
+            popUpDescription.innerText = cardDescription;
 
             listItemID = event.target.closest('.product-list__item').id
             console.log(listItemID)
