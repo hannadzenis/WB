@@ -72,12 +72,6 @@
     margin-top: 60px;
 }
 
-/* min-width: 901px; max-width: 1024px
-min-width: 769px; max-width: 900px
-min-width: 601px; max-width: 768px
-min-width: 481px; max-width: 600px
-min-width: 320px; max-width: 480px */
-
 @media only screen and (max-width: 1024px) {
     .swiper {
         height: 350px;
@@ -99,19 +93,13 @@ min-width: 320px; max-width: 480px */
 @media only screen and (max-width: 600px) {
     .swiper {
         height: 200px;
-        margin-top: 30px;
     }
 }
 @media only screen and (max-width: 480px) {
     .swiper {
         height: 150px;
-        margin-top: 30px;
     }
 }
-
-/* .swiper-creative {
-    border-radius: 40px;
-} */
 
 .swiper-slide img {
     width: 100%;
