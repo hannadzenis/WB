@@ -1,13 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="-4.73 0 72.44 72.44" xmlns="http://www.w3.org/2000/svg">
-  <g id="Group_11" data-name="Group 11" transform="translate(-482.502 -412.731)">
-    <path id="Path_25" data-name="Path 25" d="M533.566,429.163l-25.9,25.9-8.182-8.182" fill="none" stroke="#814dff" stroke-miterlimit="10" stroke-width="3"/>
-    <g id="Group_9" data-name="Group 9" opacity="0.15">
-      <circle id="Ellipse_17" data-name="Ellipse 17" cx="29.992" cy="29.992" r="29.992" transform="translate(484.002 423.686)" fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
-    </g>
-    <g id="Group_10" data-name="Group 10">
-      <circle id="Ellipse_18" data-name="Ellipse 18" cx="29.992" cy="29.992" r="29.992" transform="translate(484.002 414.231)" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="3"/>
-    </g>
-  </g>
-</svg>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#f0ebeb">
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="SVGRepo_iconCarrier"> <title>interface / 8 - interface, radio button, checked, checkmark, done, to do, radio icon</title> <g id="Free-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"> <g transform="translate(-1265.000000, -526.000000)" id="Group" stroke="#ffffff" stroke-width="2"> <g transform="translate(1263.000000, 524.000000)" id="Shape"> <path d="M12,3 C16.9705627,3 21,7.02943725 21,12 C21,16.9705627 16.9705627,21 12,21 C7.02943725,21 3,16.9705627 3,12 C3,7.02943725 7.02943725,3 12,3 Z"> </path> <polyline points="7.71428571 11.6223394 11.2436971 15 16.2857143 9"> </polyline> </g> </g> </g> </g>
+</svg>

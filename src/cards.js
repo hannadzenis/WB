@@ -21,7 +21,6 @@ export function createCard({name, price, image, sale, idElem, description}) {
             const itemAddInBasket = createElement('span', ['item__byu'], {})
             itemAddInBasket.innerHTML = 'Add to basket'
 
-            
             const discountPrice = createElement('span', ['item__discountPrice'], {})
             discountPrice.innerHTML = calcPrice(price, sale) + ' PLN'
 
@@ -38,9 +37,8 @@ export function createCard({name, price, image, sale, idElem, description}) {
     cardsBlock.append(cardItem)
 }
 
-const basketElement = []
-let fullPrice = 0
-
+const basketElement = JSON.parse(localStorage.getItem('basket')) || []
+let fullPrice = JSON.parse(localStorage.getItem('price'))*1 || 0
 async function setLocalStorage(idCards) {
     const response = await fetch(cardsURL)
     const cardsArr = await response.json()

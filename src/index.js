@@ -90,12 +90,16 @@ async function salesHits() {
     const popupAdd =  document.querySelectorAll(".pop-up__content-info__addToCart");
     buttonsAdd.forEach( (button) => {
         button.addEventListener('click', () => {
-            button.classList.toggle('card__item-add--click')
+            button.classList.toggle('card__item-add--click'), setTimeout(function () {
+                                button.classList.remove("card__item-add--click");
+                            }, 800);
         })
     })
     popupAdd.forEach( (button) => {
         button.addEventListener('click', () => {
-            button.classList.toggle('pop-up__content-info__addToCart--click')
+            button.classList.toggle('pop-up__content-info__addToCart--click'), setTimeout(function () {
+                button.classList.remove("pop-up__content-info__addToCart--click");
+            }, 800);
         })
     })
 

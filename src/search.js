@@ -2,7 +2,8 @@ import { cardsURL } from "./index.js"
 import { createCard } from "./cards.js"
 
 const searchElement = document.getElementById('search')
-const noResult = document.getElementById('cards__noResult')
+
+// const noResult = document.getElementById('cards__noResult')
 
 export async function renderCards() {
     const response = await fetch(cardsURL)
