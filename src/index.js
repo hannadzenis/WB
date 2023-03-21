@@ -152,26 +152,21 @@ export async function setLocalStorage(idCards) {
 
 salesHits()
 
+const countItems = document.getElementById('count__items')
 
-
-
-const basketEmptyImage = document.getElementById('basketEmpty')
-const basketFullImage = document.getElementById('basketFull')
-
-function checkBasket() {
-    if (basketArray.length > 0) {
-        basketEmptyImage.style.display = 'none'
-        basketFullImage.style.display = 'block'
+function checkBasket(arr) {
+    if (arr.length > 0) {
+        countItems.style.display = 'flex'
+        countItems.innerHTML = arr.length
     } else {
-        basketEmptyImage.style.display = 'block'
-        basketFullImage.style.display = 'none'
+        countItems.style.display = 'none'
     }
 }
 
 window.addEventListener('load', () => {
-    checkBasket()
+    checkBasket(basketArray)
 })
 
 window.addEventListener('click', () => {
-    checkBasket()
+    checkBasket(basketArray)
 })

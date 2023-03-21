@@ -45,6 +45,7 @@
 }
 
 .basket-area {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,6 +68,25 @@
     scale: 1.5;
     transition: 0.2s;
 }
+
+.count__items {
+    position: absolute;
+    left: 55%;
+    top: 5%;
+    width: 20px;
+    height: 20px;
+    /* display: flex; */
+        display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff60;
+    color: #344e41;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
 
 .swiper {
     width: 100%;
