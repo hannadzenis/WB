@@ -7,7 +7,6 @@ const cartItems = document.querySelector('.cart-items');
 const totalAmount = document.querySelector('.cart-total');
 
 // Переменная для хранения товаров в корзине
-// let basketArr = JSON.parse(localStorage.getItem('basket')) || [];
 let basketArr = []
 
 // Функция для показа корзины
@@ -35,7 +34,6 @@ function showCart() {
 
 // Показываем модальное окно при нажатии на кнопку Корзина
 cartBtn.addEventListener('click', function() {
-  // getLocalStorage('basket')
   basketArr = []
   getBasket()
   modal.style.display = 'block';
@@ -69,8 +67,6 @@ function getBasket() {
     }
 	}
 }
-
-
 
 function getPrice(){
   return getLocalStorage('price')

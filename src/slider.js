@@ -16,10 +16,10 @@ const swiper = new Swiper('.swiper', {
     },
     spaceBetween: 300,
       centeredSlides: true,
-      // autoplay: {
-      //   delay: 3500,
-      //   disableOnInteraction: false,
-      // },
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
     direction: 'horizontal',
     loop: true,
   
@@ -34,5 +34,4 @@ const swiper = new Swiper('.swiper', {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-  
 });
