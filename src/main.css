@@ -55,6 +55,10 @@
     transition: 0.2s;
 }
 
+.basket-Full__image {
+    display: none;
+}
+
 .basket-area > .basket-area__image {
     transition: 0.2s;
 }

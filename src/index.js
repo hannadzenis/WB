@@ -151,3 +151,27 @@ export async function setLocalStorage(idCards) {
 }
 
 salesHits()
+
+
+
+
+const basketEmptyImage = document.getElementById('basketEmpty')
+const basketFullImage = document.getElementById('basketFull')
+
+function checkBasket() {
+    if (basketArray.length > 0) {
+        basketEmptyImage.style.display = 'none'
+        basketFullImage.style.display = 'block'
+    } else {
+        basketEmptyImage.style.display = 'block'
+        basketFullImage.style.display = 'none'
+    }
+}
+
+window.addEventListener('load', () => {
+    checkBasket()
+})
+
+window.addEventListener('click', () => {
+    checkBasket()
+})
