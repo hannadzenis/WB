@@ -151,3 +151,22 @@ export async function setLocalStorage(idCards) {
 }
 
 salesHits()
+
+const countItems = document.getElementById('count__items')
+
+function checkBasket(arr) {
+    if (arr.length > 0) {
+        countItems.style.display = 'flex'
+        countItems.innerHTML = arr.length
+    } else {
+        countItems.style.display = 'none'
+    }
+}
+
+window.addEventListener('load', () => {
+    checkBasket(basketArray)
+})
+
+window.addEventListener('click', () => {
+    checkBasket(basketArray)
+})
