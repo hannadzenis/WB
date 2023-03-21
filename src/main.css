@@ -435,6 +435,10 @@
     padding: 0 20px;
 }
 
+.info__description {
+    display: none;
+}
+
 /* POP-UP */
 
 .overlay{
@@ -507,6 +511,7 @@
 
 .pop-up__content-info {
     max-width: 400px;
+    min-width: 350px;
     min-height: 400px;
     padding: 30px;
 }
