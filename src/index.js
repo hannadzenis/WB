@@ -4,6 +4,7 @@ export const cardsURL = 'https://63fb14da2027a45d8d5fb8bf.mockapi.io/cards'
 
 renderSearchCards() // search cards
 
+/* Считаем цены со скидкой */
 export function calcPrice (noDiscount, sale) {
     let resultPrice = (noDiscount - (noDiscount * (sale/100))).toFixed(2);
     return Number (resultPrice);
@@ -14,11 +15,13 @@ const productGrid = document.querySelector('.products-list')
 export const basketArray = JSON.parse(localStorage.getItem('basket')) || []
 export let fullPrice = JSON.parse(localStorage.getItem('price'))*1 || 0
 
+/* Cards - Sales Hits */
 async function salesHits() {
 
     const response = await fetch(cardsURL)
     const cardsArr = await response.json()
 
+    /* Creating cards  */
     for (let i = 0; i < 10; i++) {
         let itemHTML = `
         <div id = "${cardsArr[i].idElem}" class="product-list__item">
@@ -57,11 +60,10 @@ async function salesHits() {
                 productGrid.innerHTML += itemHTML;
             }
 
-    /* POP-UP */
+    /* Creating POP-UP */
     const buttons = document.querySelectorAll('.card__view');
     const overlay = document.querySelector('.overlay');
     const popUpWindow = document.querySelector('.pop-up__content');
-    // const descriptions = document.querySelectorAll('.info__description');
     let listItemID = 0;
 
     buttons.forEach( (button) => {
@@ -101,9 +103,10 @@ async function salesHits() {
     const buttonsAdd = document.querySelectorAll(".card__item-add");
     const popupAdd =  document.querySelectorAll(".pop-up__content-info__addToCart");
 
+    /* Buttons to the Cart */
     buttonsAdd.forEach( (button, i) => {
         button.addEventListener('click', () => {
-
+    /* LocalStorage */
             basketArray.push(cardsArr[i]);
 
             fullPrice += calcPrice(cardsArr[i].price, cardsArr[i].sale)
@@ -117,7 +120,7 @@ async function salesHits() {
             }, 800);
         })
     })
-
+    /* Same buttons but popup */
     popupAdd.forEach( (button, i) => {
         button.addEventListener('click', () => {
 
@@ -152,6 +155,8 @@ export async function setLocalStorage(idCards) {
 
 salesHits()
 
+
+/* Counting items in the cart */
 const countItems = document.getElementById('count__items')
 
 function checkBasket(arr) {
