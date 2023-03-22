@@ -23,6 +23,17 @@
 проверять, как стили ведут себя для заданных в браузер значениях, т.е. для iPhone SE, iPad Air, Galaxy Fold, etc...
 
 
+### points css-adaptive:
+
+* min-width: 901px; max-width: 1024px
+* min-width: 769px; max-width: 900px
+* min-width: 601px; max-width: 768px
+* min-width: 481px; max-width: 600px
+* min-width: 320px; max-width: 480px
+
+проверять, как стили ведут себя для заданных в браузер значениях, т.е. для iPhone SE, iPad Air, Galaxy Fold, etc...
+
+
 ### structure JS:
 
 JS files:
