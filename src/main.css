@@ -4,7 +4,7 @@
     max-width: 1440px;
 }
 
-/* Yurys part */
+/* Yury part */
 .header {
     position: fixed;  
     top: 0;  
@@ -75,8 +75,7 @@
     top: 5%;
     width: 20px;
     height: 20px;
-    /* display: flex; */
-        display: none;
+    display: none;
     align-items: center;
     justify-content: center;
     background-color: #ffffff60;
@@ -86,92 +85,12 @@
     font-weight: 500;
 }
 
-
-
-.swiper {
-    width: 100%;
-    height: 100%;
-    margin-top: 60px;
-}
-
-@media only screen and (max-width: 1024px) {
-    .swiper {
-        height: 350px;
-    }
-}
-
-@media only screen and (max-width: 900px) {
-    .swiper {
-        height: 300px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .swiper {
-        height: 250px;
-        margin-top: 30px;
-    }
-}
-@media only screen and (max-width: 600px) {
-    .swiper {
-        height: 200px;
-    }
-}
-@media only screen and (max-width: 480px) {
-    .swiper {
-        height: 150px;
-    }
-}
-
-.swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.swiper-button-next, .swiper-button-prev {
-    
-    color: #231942;
-}
-
-.swiper-pagination-horizontal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.swiper-pagination-bullet {
-    width: var(--swiper-pagination-bullet-width,
-    var(--swiper-pagination-bullet-size,8px));
-
-    height: var(--swiper-pagination-bullet-height,
-    var(--swiper-pagination-bullet-size,8px));
-}
-
-.swiper-pagination-bullet-active{
-    background: #231942;
-    width: var(--swiper-pagination-bullet-width,
-    var(--swiper-pagination-bullet-size,10px));
-
-    height: var(--swiper-pagination-bullet-height,
-    var(--swiper-pagination-bullet-size,10px));
-}
-
 .cards {
     position: relative;
     margin: 0 auto;
     padding-top: 40px;
-    max-width: 1440px;
+    max-width: 1000px;
         
-}
-
-#cards__noResult {
-    display: none;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 600;
 }
 
 .cards-item {
@@ -186,8 +105,15 @@
     padding: 10px 0;
 }
 
+.item-image-area {
+    display: block;
+    max-width: 400px;
+}
+
 .item__image {
-    max-height: 250px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 20px;
 }
 
@@ -203,6 +129,7 @@
 
 .item__descriptions {
     padding: 20px 0;
+    max-width: 600px;
     color: #344e41;
     text-indent: 40px;
     text-align: justify;
@@ -268,6 +195,10 @@
         max-width: 300px;
     }
 
+    .item-image-area {
+        max-width: 300px;
+    }
+
     .item__byu {
         font-size: 2rem;
     }
@@ -292,12 +223,12 @@
         width: 150px;
     }
 
-    .item__image {
-        height: 180px;
-    }
-
     .item-info {
         padding: 10px;
+    }
+
+    .item-image-area {
+        max-width: 250px;
     }
 
     .item__name {
@@ -334,14 +265,20 @@
     .item-content {
         flex-wrap: wrap;
         justify-content: space-around;
+        padding: 0;
     }
 
     .item-info {
         padding: 10px 40px;
     }
 
+    .item-image-area {
+        max-width: 100%;
+    }
+
     .item__image {
-        height: 300px;
+        
+        border-radius: 20px 20px 0 0;
     }
 
     .item-footer {
@@ -372,22 +309,97 @@
         padding: 10px 20px;
     }
 
-    .item__image {
-        height: 240px;
-    }
-
     .item-footer {
         border-radius: 0 0 20px 20px;
+    }
+
+    .item__byu {
+        font-size: 1.7rem;
+    }
+
+    .item__discountPrice {
+        font-size: 1.4rem;
     }
 
     .item__normalPrice {
         left: auto;
         right: 3%;
+        font-size: 1rem;
     }
 }
-/* --- end Yurys part */
+/* --- end Yury part */
 
+/* ---  Alexandr part */
+.swiper {
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
+}
 
+@media only screen and (max-width: 1024px) {
+    .swiper {
+        height: 350px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .swiper {
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .swiper {
+        height: 250px;
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .swiper {
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .swiper {
+        height: 150px;
+    }
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.swiper-button-next, .swiper-button-prev {
+    
+    color: #231942;
+}
+
+.swiper-pagination-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-pagination-bullet {
+    width: var(--swiper-pagination-bullet-width,
+    var(--swiper-pagination-bullet-size,8px));
+
+    height: var(--swiper-pagination-bullet-height,
+    var(--swiper-pagination-bullet-size,8px));
+}
+
+.swiper-pagination-bullet-active{
+    background: #231942;
+    width: var(--swiper-pagination-bullet-width,
+    var(--swiper-pagination-bullet-size,10px));
+
+    height: var(--swiper-pagination-bullet-height,
+    var(--swiper-pagination-bullet-size,10px));
+}
+/* ---  end Alexandr part */
 
 /* Хиты продаж - Аня */
 .container {
